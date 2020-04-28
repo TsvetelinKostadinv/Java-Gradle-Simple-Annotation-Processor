@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+    id 'java'
+    id 'eclipse'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	implementation project(':Annotation-Processor')
+	annotationProcessor project(':Annotation-Processor')
+}
+
+subprojects {
+    version = '1.0'
+}
+
+build.dependsOn(':Annotation-Processor:build')
